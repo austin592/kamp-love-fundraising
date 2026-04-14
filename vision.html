@@ -3,333 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kamp Love &mdash; The Vision · A State of the Union & A Call for Help</title>
+<title>Kamp Love &mdash; The Vision &middot; A State of the Union &amp; A Call for Help</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   KAMP LOVE DESIGN SYSTEM — shared with state-of-the-union + financial-model
-   ============================================================ */
-:root{
-  /* Color — OKLCH chromatic near-neutrals */
-  --cream:    oklch(0.965 0.010 70);
-  --cream-2:  oklch(0.92  0.012 65);
-  --dark:     oklch(0.19  0.010 50);
-  --dark-2:   oklch(0.30  0.010 50);
-  --muted:    oklch(0.85  0.008 65);
-  --rule-on-dark:  color-mix(in oklch, var(--cream) 22%, transparent);
-  --rule-on-cream: color-mix(in oklch, var(--dark)  22%, transparent);
-
-  /* Fonts */
-  --serif:"PT Serif","PT Serif Fallback",Georgia,serif;
-  --sans: "Lato","Lato Fallback",-apple-system,Arial,sans-serif;
-
-  /* Type scale — Perfect Fourth (1.333) */
-  --f-xs:  0.75rem;
-  --f-sm:  0.875rem;
-  --f-base:1rem;
-  --f-md:  1.125rem;
-  --f-lg:  1.333rem;
-  --f-xl:  1.777rem;
-  --f-2xl: 2.369rem;
-  --f-3xl: 3.157rem;
-  --f-4xl: 4.209rem;
-  --f-5xl: 5.61rem;
-  --f-6xl: 7.478rem;
-
-  --tk-caps:    0.08em;
-  --tk-display:-0.015em;
-
-  --lh-tight:1.08;
-  --lh-snug: 1.2;
-  --lh-body: 1.6;
-
-  --measure:     65ch;
-  --measure-nar: 52ch;
-
-  --wrap:      1200px;
-  --wrap-wide: 1400px;
-  --wrap-sm:   56.25rem;
-  --col-gap:   clamp(1.5rem, 3vw, 3rem);
-  --pad-x:     clamp(1.75rem, 6vw, 6rem);
-  --section-y: clamp(5rem, 12vh, 10rem);
-
-  --dur-fast: 120ms;
-  --dur-base: 200ms;
-  --dur-slow: 320ms;
-  --ease-std: cubic-bezier(.2,0,0,1);
-}
-
-@font-face{font-family:"PT Serif Fallback";src:local("Georgia");ascent-override:93%;descent-override:25%;line-gap-override:0%;size-adjust:100%}
-@font-face{font-family:"Lato Fallback";src:local("Arial");ascent-override:101%;descent-override:22%;line-gap-override:0%;size-adjust:97%}
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:100%;scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:none}
-body{
-  font-family:var(--serif);
-  background:var(--cream);color:var(--dark);
-  font-size:var(--f-md);line-height:var(--lh-body);
-  font-kerning:auto;font-variant-ligatures:common-ligatures;font-optical-sizing:auto;
-  text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;
-}
-@media (min-width:60em) {body{font-size:1.125rem}}
-@media (min-width:120em){body{font-size:1.25rem}}
-
-p{text-wrap:pretty;hyphens:auto;overflow-wrap:break-word;max-width:var(--measure);font-size:var(--f-md);line-height:var(--lh-body)}
-p + p{margin-top:1rem}
-img{max-width:100%;display:block;height:auto}
-a{color:inherit;text-decoration:none}
-:target{scroll-margin-block:5ex}
-::selection{background:var(--dark);color:var(--cream)}
-
-h1,h2,h3,h4,h5,h6{font-family:var(--serif);font-weight:500;text-wrap:balance;overflow-wrap:break-word}
-h1{font-size:clamp(var(--f-4xl),9vw,var(--f-6xl));line-height:var(--lh-tight);letter-spacing:var(--tk-display)}
-h2{font-size:clamp(var(--f-3xl),6vw,var(--f-5xl));line-height:var(--lh-tight);letter-spacing:var(--tk-display)}
-h3{font-size:clamp(var(--f-2xl),3.5vw,var(--f-3xl));line-height:var(--lh-snug)}
-h4{font-size:clamp(var(--f-xl),2.2vw,var(--f-2xl));line-height:var(--lh-snug)}
-/* Visual-demotion class: h3 used for semantic sequencing, sized as h4 */
-.h-sub{font-size:clamp(var(--f-xl),2.2vw,var(--f-2xl));line-height:var(--lh-snug);letter-spacing:0}
-em{font-style:italic}
-
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
-
-.skip-link{
-  position:absolute;left:-9999px;top:0;
-  background:var(--dark);color:var(--cream);
-  padding:0.875rem 1.375rem;z-index:100;
-  font-family:var(--sans);font-size:var(--f-xs);
-  letter-spacing:var(--tk-caps);text-transform:uppercase;
-  border-radius:0 0 8px 0;
-}
-.skip-link:focus,.skip-link:focus-visible{left:0;top:0}
-
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{
-    animation-duration:0.01ms !important;animation-iteration-count:1 !important;
-    transition-duration:0.01ms !important;scroll-behavior:auto !important;
-  }
-}
-
-/* NAV */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.375rem var(--pad-x);
-  background:color-mix(in oklch, var(--dark) 72%, transparent);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  color:var(--cream);
-}
-.nav .logo{display:flex;align-items:center;gap:0.875rem;font-family:var(--serif);font-size:var(--f-md)}
-.nav .logo img{height:34px;filter:invert(1) brightness(2)}
-.nav .links{display:flex;gap:2rem;font-family:var(--sans);font-size:var(--f-xs);letter-spacing:var(--tk-caps);text-transform:uppercase}
-.nav .links a{opacity:.75;transition:opacity var(--dur-fast) var(--ease-std)}
-@media (hover:hover){.nav .links a:hover{opacity:1}}
-.nav .links a:focus-visible{opacity:1}
-.nav .links a.active{opacity:1;border-bottom:1px solid var(--cream);padding-bottom:4px}
-@media (max-width:720px){.nav .links{display:none}}
-
-/* BUTTONS */
-.btn{
-  display:inline-block;padding:1rem 1.75rem;border-radius:1006px;
-  font-family:var(--serif);font-size:var(--f-base);font-weight:400;line-height:1;
-  border:1px solid transparent;cursor:pointer;
-  transition:background-color var(--dur-base) var(--ease-std),color var(--dur-base) var(--ease-std),border-color var(--dur-base) var(--ease-std);
-}
-.btn-light     {background:var(--cream);color:var(--dark); border-color:var(--cream)}
-.btn-dark      {background:var(--dark); color:var(--cream);border-color:var(--dark)}
-.btn-ghost     {background:transparent; color:var(--cream);border-color:var(--cream)}
-.btn-ghost-dark{background:transparent; color:var(--dark); border-color:var(--dark)}
-@media (hover:hover){
-  .btn-light:hover     {background:var(--dark); color:var(--cream)}
-  .btn-dark:hover      {background:var(--cream);color:var(--dark)}
-  .btn-ghost:hover     {background:var(--cream);color:var(--dark)}
-  .btn-ghost-dark:hover{background:var(--dark); color:var(--cream)}
-}
-
-section{padding:var(--section-y) var(--pad-x)}
-.dark {background:var(--dark); color:var(--cream)}
-.cream{background:var(--cream);color:var(--dark)}
-.wrap   {max-width:var(--wrap-wide);margin:0 auto}
-.wrap-sm{max-width:var(--wrap-sm);  margin:0 auto}
-
-.eyebrow{font-family:var(--sans);font-size:var(--f-xs);letter-spacing:var(--tk-caps);text-transform:uppercase;font-weight:400;opacity:.7;margin-bottom:1.5rem}
-.lede{font-size:var(--f-lg);line-height:1.5;max-width:var(--measure)}
-
-/* HERO */
-.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding-top:8.75rem;position:relative;overflow:hidden}
-.hero h1{font-size:clamp(var(--f-4xl),9vw,9rem);margin-bottom:1.5rem;max-width:14ch}
-.hero .hero-sub{font-size:var(--f-lg);max-width:var(--measure);opacity:.85;margin-top:1.5rem}
-.hero-meta{
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;
-  margin-top:5rem;padding-top:2.5rem;
-  border-top:1px solid var(--rule-on-dark);
-  font-family:var(--sans);font-size:var(--f-xs);letter-spacing:var(--tk-caps);text-transform:uppercase;opacity:.6;
-}
-
-section h2{margin-bottom:2.5rem;max-width:22ch}
-section h2 + .lede{margin-bottom:3rem}
-.section-head{margin-bottom:4rem}
-
-/* TRIPTYCH */
-.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--col-gap)}
-.triptych .t{border-top:1px solid var(--rule-on-dark);padding-top:1.75rem}
-.cream .triptych .t{border-top-color:var(--rule-on-cream)}
-.triptych .t h4{margin-bottom:1.125rem;font-style:italic}
-.triptych .t p{font-size:var(--f-base);line-height:var(--lh-body);opacity:.88;max-width:none}
-@media (max-width:880px){.triptych{grid-template-columns:1fr;gap:2.5rem}}
-
-/* ORDERED VISION LIST */
-.ol-vision{list-style:none;counter-reset:v;max-width:55rem}
-.ol-vision li{
-  counter-increment:v;
-  padding:1.75rem 0 1.75rem 5rem;
-  border-top:1px solid var(--rule-on-dark);
-  position:relative;
-  font-size:var(--f-md);line-height:var(--lh-body);
-  max-width:none;
-}
-.cream .ol-vision li{border-top-color:var(--rule-on-cream)}
-.ol-vision li:before{
-  content:counter(v,decimal-leading-zero);
-  position:absolute;left:0;top:1.75rem;
-  font-family:var(--sans);font-size:var(--f-xs);
-  letter-spacing:var(--tk-caps);opacity:.55;
-  font-variant-numeric:tabular-nums;
-}
-.ol-vision li:last-child{border-bottom:1px solid var(--rule-on-dark)}
-.cream .ol-vision li:last-child{border-bottom-color:var(--rule-on-cream)}
-
-/* GRIDS */
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--col-gap)}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--col-gap)}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--col-gap)}
-@media (max-width:960px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
-
-.card{padding:1.75rem 0 0;border-top:1px solid var(--rule-on-dark)}
-.cream .card{border-top-color:var(--rule-on-cream)}
-.card h4{margin-bottom:0.875rem;font-style:italic}
-.card p{font-size:var(--f-base);line-height:var(--lh-body);opacity:.85;max-width:none}
-.card ul{list-style:none;padding:0;margin-top:0.5rem;font-size:var(--f-base);line-height:1.7;opacity:.85}
-.card ul li{padding:0.25rem 0}
-
-/* ORG TABLE */
-.org{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule-on-dark)}
-.cream .org{border-top-color:var(--rule-on-cream)}
-.org .row{display:contents}
-.org .cell{padding:1.125rem 1.25rem;border-bottom:1px solid var(--rule-on-dark);font-size:var(--f-base)}
-.cream .org .cell{border-bottom-color:var(--rule-on-cream)}
-.org .cell.name{font-family:var(--serif);font-weight:500}
-.org .cell.role{font-family:var(--sans);font-size:var(--f-sm);letter-spacing:0.02em;opacity:.7}
-@media (max-width:700px){.org{grid-template-columns:1fr}.org .cell.role{padding-top:0}}
-
-/* VISION-FOR */
-.vision-for{max-width:60rem}
-.vision-for .v{
-  padding:1.5rem 0;
-  border-top:1px solid var(--rule-on-dark);
-  display:grid;grid-template-columns:13.75rem 1fr;gap:2.5rem;align-items:baseline;
-}
-.cream .vision-for .v{border-top-color:var(--rule-on-cream)}
-.vision-for .v:last-child{border-bottom:1px solid var(--rule-on-dark)}
-.cream .vision-for .v:last-child{border-bottom-color:var(--rule-on-cream)}
-.vision-for .v .name{font-family:var(--serif);font-weight:500;font-size:var(--f-md)}
-.vision-for .v .arrow{font-family:var(--sans);font-size:var(--f-base);line-height:var(--lh-body);opacity:.85}
-@media (max-width:700px){.vision-for .v{grid-template-columns:1fr;gap:0.5rem}}
-
-/* QUOTE */
-.quote{max-width:var(--wrap-sm);margin:0 auto;text-align:center}
-.quote blockquote{
-  font-family:var(--serif);font-style:italic;
-  font-size:clamp(var(--f-2xl),3.5vw,var(--f-3xl));
-  line-height:var(--lh-snug);margin-bottom:2rem;
-  max-width:none;
-}
-.quote .attrib{font-family:var(--sans);font-size:var(--f-xs);letter-spacing:var(--tk-caps);text-transform:uppercase;opacity:.6}
-
-/* BUDGET TABLE */
-.budget{max-width:62.5rem;margin:0 auto}
-.budget .row{
-  display:grid;grid-template-columns:1fr auto;gap:2rem;
-  padding:1.375rem 0;
-  border-top:1px solid var(--rule-on-dark);
-  align-items:baseline;
-}
-.cream .budget .row{border-top-color:var(--rule-on-cream)}
-.budget .row:last-child{border-bottom:1px solid var(--rule-on-dark);font-weight:700}
-.cream .budget .row:last-child{border-bottom-color:var(--rule-on-cream)}
-.budget .row .label{font-family:var(--serif);font-size:var(--f-md)}
-.budget .row .amt{font-family:var(--serif);font-size:var(--f-lg);font-variant-numeric:tabular-nums;letter-spacing:var(--tk-display)}
-
-/* SCENARIO CARDS */
-.scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--col-gap)}
-.scenarios .s{padding:2.5rem 2rem;border:1px solid var(--rule-on-cream);border-radius:4px;background:var(--cream)}
-.dark .scenarios .s{background:transparent;border-color:var(--rule-on-dark);color:var(--cream)}
-.scenarios .s .amt{
-  font-family:var(--serif);
-  font-size:clamp(var(--f-3xl),5vw,var(--f-4xl));
-  line-height:var(--lh-tight);margin-bottom:0.75rem;font-weight:500;
-  font-variant-numeric:tabular-nums;letter-spacing:var(--tk-display);
-}
-.scenarios .s .tier{font-family:var(--sans);font-size:var(--f-xs);letter-spacing:var(--tk-caps);text-transform:uppercase;opacity:.6;margin-bottom:1.5rem}
-.scenarios .s ul{list-style:none;padding:0;font-size:var(--f-base);line-height:var(--lh-body)}
-.scenarios .s ul li{padding:0.5rem 0;border-top:1px solid var(--rule-on-cream)}
-.dark .scenarios .s ul li{border-top-color:var(--rule-on-dark)}
-@media (max-width:900px){.scenarios{grid-template-columns:1fr}}
-
-/* PHOTO STRIP */
-.photo-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;max-width:var(--wrap-wide);margin:4rem auto 0}
-.photo-strip .slot{aspect-ratio:3/4;background:var(--dark-2) center/cover no-repeat;border-radius:2px;position:relative}
-.cream .photo-strip .slot{background-color:var(--cream-2)}
-.photo-strip .slot.empty:before{
-  content:"PHOTO";position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--sans);font-size:var(--f-xs);
-  letter-spacing:var(--tk-caps);opacity:.4;
-}
-@media (max-width:900px){.photo-strip{grid-template-columns:repeat(2,1fr)}}
-
-.split{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2.5rem,6vw,6.25rem);align-items:center}
-.split .media{aspect-ratio:4/5;background:var(--dark-2) center/cover no-repeat;border-radius:4px}
-@media (max-width:900px){.split{grid-template-columns:1fr;gap:3rem}}
-
-/* CTA */
-.cta{text-align:center;padding:var(--section-y) var(--pad-x)}
-.cta h2{max-width:22ch;margin:0 auto 2.5rem}
-.cta .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-
-footer{
-  padding:3.5rem var(--pad-x);background:var(--dark);color:var(--cream);
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;
-  font-family:var(--sans);font-size:var(--f-sm);
-}
-footer .f-logo{display:flex;align-items:center;gap:0.875rem;font-family:var(--serif);font-size:var(--f-md)}
-footer .f-logo img{height:28px;filter:invert(1) brightness(2)}
-footer .links{display:flex;gap:1.75rem;opacity:.7}
-
-/* Opportunity table */
-.opp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--col-gap)}
-.opp-grid .opp{padding:2rem 0;border-top:1px solid var(--rule-on-dark)}
-.cream .opp-grid .opp{border-top-color:var(--rule-on-cream)}
-.opp-grid .opp .tag{font-family:var(--sans);font-size:var(--f-xs);letter-spacing:var(--tk-caps);text-transform:uppercase;opacity:.6;margin-bottom:0.625rem}
-.opp-grid .opp h4{margin-bottom:0.875rem}
-.opp-grid .opp p{font-size:var(--f-base);max-width:none}
-@media (max-width:780px){.opp-grid{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="nav" aria-label="Primary">
-  <div class="logo">
-    <img src="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66d78a3b513117a1b3dc9fa3_okay2.png" alt="Kamp Love">
+  <a href="index.html" class="logo">
+    <img src="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66d78a3b513117a1b3dc9fa3_okay2.png" alt="Kamp Love" width="34" height="34">
     <span>Kamp Love</span>
-  </div>
-  <div class="links">
+  </a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+  <div class="links" id="nav-links">
     <a href="index.html">State of the Union</a>
     <a href="vision.html" class="active">The Vision</a>
     <a href="financial-model.html">Financial Model</a>
@@ -340,7 +32,7 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
 <main id="main">
 
 <!-- HERO -->
-<section class="hero dark">
+<section class="hero hero--sub dark">
   <div>
     <div class="eyebrow">The Vision &middot; April 2026</div>
     <h1>A state of the union. <em>A call for help.</em></h1>
@@ -349,8 +41,8 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
     </p>
   </div>
   <div class="hero-meta">
-    <div>Austin Rockwell &middot; Founder &middot; CEO</div>
-    <div>Scroll &darr;</div>
+    <span>Austin Rockwell &middot; Founder &middot; CEO</span>
+    <span>Scroll &darr;</span>
   </div>
 </section>
 
@@ -364,21 +56,21 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
     <div class="lede">
       We are a leader development organization, with vision to develop the <em>best student leaders in the world.</em>
     </div>
-    <div class="lede" style="margin-top:32px">
-      We develop world class leaders in <b>6 categories</b>, our framework of wholistic discipleship: <b>hard skills, soft skills, spiritual formation and content, opportunity and coaching.</b>
+    <div class="lede mt-md">
+      We develop world class leaders in <strong>6 categories</strong>, our framework of wholistic discipleship: <strong>hard skills, soft skills, spiritual formation and content, opportunity and coaching.</strong>
     </div>
-    <div class="lede" style="margin-top:32px">
+    <div class="lede mt-md">
       We are on mission to see their leadership actualized in the transforming of lives by the gospel through <em>camping, connection, community and Christ.</em>
     </div>
   </div>
 </section>
 
-<!-- MISSION / VISION / CURRENT VISION -->
+<!-- MISSION / VISION / MODEL -->
 <section class="dark">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">02 &middot; Mission · Vision · Model</div>
-      <h2><b>MISSION &middot; VISION &middot; MODEL</b></h2>
+      <div class="eyebrow">02 &middot; Mission &middot; Vision &middot; Model</div>
+      <h2>Three pillars, one direction.</h2>
     </div>
     <div class="triptych">
       <div class="t">
@@ -405,13 +97,13 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
       <h2>What I believe God is calling us to build.</h2>
     </div>
     <ol class="ol-vision">
-      <li>Kamp Love at <b>100 universities in 5 countries</b>, partnered with 100 local churches, by December 1, 2030.</li>
-      <li>Develop <b>10,000 of the 100,000 most influential college student leaders</b> in the world.</li>
-      <li>Create and utilize the best student leader development <b>content, opportunity, and coaching</b> in the world.</li>
-      <li>Own and operate <b>retreat centers across the world</b> &mdash; becoming the standard for excellence in camp and retreat ministry through business and ministry excellence.</li>
-      <li><b>Kamp Love Kids</b> &mdash; curriculum development for kids camps, and running Kamps for kids at and for churches.</li>
-      <li><b>Kamp Love Summer Camp</b> &mdash; for churches at summer camp locations and church campuses.</li>
-      <li><b>Kamp Songs</b> &mdash; equipping <b>1,000 young worship leaders</b> to write and release original worship music for the Church.</li>
+      <li>Kamp Love at <strong>100 universities in 5 countries</strong>, partnered with 100 local churches, by December 1, 2030.</li>
+      <li>Develop <strong>10,000 of the 100,000 most influential college student leaders</strong> in the world.</li>
+      <li>Create and utilize the best student leader development <strong>content, opportunity, and coaching</strong> in the world.</li>
+      <li>Own and operate <strong>retreat centers across the world</strong> &mdash; becoming the standard for excellence in camp and retreat ministry through business and ministry excellence.</li>
+      <li><strong>Kamp Love Kids</strong> &mdash; curriculum development for kids camps, and running Kamps for kids at and for churches.</li>
+      <li><strong>Kamp Love Summer Camp</strong> &mdash; for churches at summer camp locations and church campuses.</li>
+      <li><strong>Kamp Songs</strong> &mdash; equipping <strong>1,000 young worship leaders</strong> to write and release original worship music for the Church.</li>
     </ol>
   </div>
 </section>
@@ -424,13 +116,13 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
       <h2>Five years. Nineteen campuses. <em>Eighteen thousand students.</em></h2>
     </div>
     <p class="lede">
-      From a friend-group camping trip at Grand Canyon University to a national college camping ministry, Kamp Love has reached <b>18,000 students</b> and developed <b>5,550 student leaders</b> across <b>19 active campuses</b> &mdash; anchored by our Southeast expansion proposal and a growing national footprint.
+      From a friend-group camping trip at Grand Canyon University to a national college camping ministry, Kamp Love has reached <strong>18,000 students</strong> and developed <strong>5,550 student leaders</strong> across <strong>19 active campuses</strong> &mdash; anchored by our Southeast expansion proposal and a growing national footprint.
     </p>
     <div class="photo-strip">
-      <div class="slot" style="background-image:url('https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/688a836aafe35f0cc5e7c6ac__DSC6552_websize.jpg')"></div>
-      <div class="slot" style="background-image:url('https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/688d55066a17214fbee280a4_IMG_4727_websize.jpg')"></div>
-      <div class="slot" style="background-image:url('https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/688d52ebc13418f046912c9a_IMG_4279.jpeg')"></div>
-      <div class="slot" style="background-image:url('https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66f5b5d6d66212101d54b7cc_kmaphero%20(1).jpg')"></div>
+      <div class="slot"><img src="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/688a836aafe35f0cc5e7c6ac__DSC6552_websize.jpg" alt="Students at a Kamp Love campfire" loading="lazy"></div>
+      <div class="slot"><img src="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/688d55066a17214fbee280a4_IMG_4727_websize.jpg" alt="Students gathered at a Kamp Love retreat" loading="lazy"></div>
+      <div class="slot"><img src="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/688d52ebc13418f046912c9a_IMG_4279.jpeg" alt="Kamp Love outdoor worship" loading="lazy"></div>
+      <div class="slot"><img src="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66f5b5d6d66212101d54b7cc_kmaphero%20(1).jpg" alt="Students hiking at a Kamp Love event" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -476,10 +168,10 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
 <section class="cream">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">07 &middot; Our Board · Vision</div>
+      <div class="eyebrow">07 &middot; Our Board &middot; Vision</div>
       <h2>Four boards. One mission.</h2>
     </div>
-    <div class="grid-4" style="margin-bottom:64px">
+    <div class="grid-4 mb-xl">
       <div class="card"><h3 class="h-sub">Legal</h3><p>Fiduciary and legal oversight &mdash; compliance, governance, protection.</p></div>
       <div class="card"><h3 class="h-sub">Advisory</h3><p>Strategic counsel from proven operators and ministry leaders.</p></div>
       <div class="card"><h3 class="h-sub">Pastoral</h3><p>Spiritual covering for staff, founder, and organizational health.</p></div>
@@ -495,11 +187,11 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
 <section class="dark">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">08 &middot; HQ Staff · Current</div>
+      <div class="eyebrow">08 &middot; HQ Staff &middot; Current</div>
       <h2>The team carrying the mission today.</h2>
     </div>
 
-    <h3 class="h-sub" style="margin-bottom:16px">Executive</h3>
+    <h3 class="h-sub mb-sm">Executive</h3>
     <div class="org">
       <div class="cell name">Austin Rockwell</div><div class="cell role">Founder, CEO, President</div>
       <div class="cell name">Alex Clyde</div><div class="cell role">Co-Founder &middot; currently on leave</div>
@@ -508,7 +200,7 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
       <div class="cell name">Traci Lovekamp</div><div class="cell role">Interim Director of Finance</div>
     </div>
 
-    <h3 class="h-sub" style="margin:56px 0 16px">Regional</h3>
+    <h3 class="h-sub section-subhead">Regional</h3>
     <div class="org">
       <div class="cell name">Charlotte</div><div class="cell role">Manager of Regional Directors</div>
       <div class="cell name">Greg</div><div class="cell role">Regional Director (Resident)</div>
@@ -522,7 +214,7 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
       <div class="cell name">Braedon Nuttal</div><div class="cell role">Regional Director</div>
     </div>
 
-    <h3 class="h-sub" style="margin:56px 0 16px">Relationships &amp; Creative</h3>
+    <h3 class="h-sub section-subhead">Relationships &amp; Creative</h3>
     <div class="org">
       <div class="cell name">Jake Leyden</div><div class="cell role">Relationships Manager</div>
       <div class="cell name">Hayden Ildebrando</div><div class="cell role">Relationships Manager</div>
@@ -578,7 +270,7 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
       <div class="eyebrow">11 &middot; Future Org Chart</div>
       <h2>The body we are building into.</h2>
     </div>
-    <div class="lede" style="margin-bottom:48px">
+    <div class="lede mb-lg">
       Board &rarr; Founder / Chief Vision Officer &rarr; Executive Director &rarr; Directors of Departments.
     </div>
     <div class="vision-for">
@@ -626,7 +318,7 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
       </div>
       <div class="card">
         <h3 class="h-sub">Student Leader Fundraising</h3>
-        <p>Student leaders fundraise for their universities &mdash; goal is <b>100 monthly partners at $50/mo</b>. A mandatory fundraising party invites parents, churches, and their network into partnership.</p>
+        <p>Student leaders fundraise for their universities &mdash; goal is <strong>100 monthly partners at $50/mo</strong>. A mandatory fundraising party invites parents, churches, and their network into partnership.</p>
       </div>
       <div class="card">
         <h3 class="h-sub">HQ Development</h3>
@@ -640,13 +332,13 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
 <section class="dark">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">14 &middot; Current Opportunity · New Kamps</div>
+      <div class="eyebrow">14 &middot; Current Opportunity &middot; New Kamps</div>
       <h2>40+ universities <em>waiting on us.</em></h2>
     </div>
     <p class="lede">
       We currently have a pipeline of more than 40 universities across the country that have asked to become a Kamp Love &mdash; students, campus pastors, and partner churches praying we come. The limiting factor is not the door. It is the staff and the resources to walk through it.
     </p>
-    <div style="margin-top:48px">
+    <div class="mt-lg">
       <a href="https://docs.google.com/spreadsheets/d/1Jicv-k7zYeEo4LK4F-mGGHTcgQ1BralP/edit?usp=sharing" class="btn btn-ghost" target="_blank" rel="noopener">View the 40+ University Pipeline &rarr;</a>
     </div>
   </div>
@@ -656,19 +348,19 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
 <section class="cream">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">15 &middot; Current Opportunity · Kamp Site Ownership</div>
+      <div class="eyebrow">15 &middot; Current Opportunity &middot; Kamp Site Ownership</div>
       <h2>Two doors God has put in front of us.</h2>
     </div>
     <div class="opp-grid">
       <div class="opp">
         <div class="tag">Johnstown, PA &middot; 400 acres</div>
         <h3 class="h-sub">Kamp Emmanuel</h3>
-        <p>Build a world-class retreat center, resort lodge, and wedding venue on 400 acres in Johnstown, PA &mdash; in partnership with <b>John Kaites.</b> A flagship East Coast home for Kamp Love.</p>
+        <p>Build a world-class retreat center, resort lodge, and wedding venue on 400 acres in Johnstown, PA &mdash; in partnership with <strong>John Kaites.</strong> A flagship East Coast home for Kamp Love.</p>
       </div>
       <div class="opp">
         <div class="tag">Prescott, AZ &middot; 1,500 beds</div>
         <h3 class="h-sub">UCYC</h3>
-        <p>Acquire UCYC in Prescott, AZ &mdash; 1,500 beds in a state-of-the-art renovated premier Arizona summer camp. In partnership through missions funding with <b>CCV</b> and other Arizona megachurches.</p>
+        <p>Acquire UCYC in Prescott, AZ &mdash; 1,500 beds in a state-of-the-art renovated premier Arizona summer camp. In partnership through missions funding with <strong>CCV</strong> and other Arizona megachurches.</p>
       </div>
     </div>
   </div>
@@ -682,40 +374,35 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
       <h2>Five categories. Five ways to participate. Five stages.</h2>
     </div>
 
-    <h3 class="h-sub" style="margin-bottom:24px">Five Categories</h3>
-    <div class="grid-4" style="margin-bottom:64px">
+    <h3 class="h-sub mb-md">Five Categories</h3>
+    <div class="grid-4 mb-xl">
       <div class="card"><h3 class="h-sub">Parents</h3></div>
       <div class="card"><h3 class="h-sub">Orgs &amp; Businesses</h3></div>
       <div class="card"><h3 class="h-sub">Churches</h3></div>
       <div class="card"><h3 class="h-sub">Alumni</h3></div>
-    </div>
-    <div class="grid-4" style="margin-bottom:80px">
       <div class="card"><h3 class="h-sub">High Net-Worth</h3></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
     </div>
 
-    <h3 class="h-sub" style="margin-bottom:24px">Five Ways To Participate</h3>
-    <div class="lede" style="margin-bottom:32px">We invite people into the mission of Kamp Love through trackable participation. One star for each level of participation &mdash; we aim for <b>5-star participants.</b></div>
-    <ol class="ol-vision" style="margin-bottom:80px">
-      <li><b>Talk</b> with us &mdash; email, phone, text, newsletter.</li>
-      <li><b>Pray</b> with us &mdash; prayer chain, prayer call.</li>
-      <li><b>Serve</b> with us &mdash; at a Kamp, at an event, with student leaders.</li>
-      <li><b>Give</b> to us &mdash; financially.</li>
-      <li><b>Share</b> us &mdash; referrals, posts, tell the story.</li>
+    <h3 class="h-sub mb-md">Five Ways To Participate</h3>
+    <div class="lede mb-md">We invite people into the mission of Kamp Love through trackable participation. One star for each level of participation &mdash; we aim for <strong>5-star participants.</strong></div>
+    <ol class="ol-vision mb-xl">
+      <li><strong>Talk</strong> with us &mdash; email, phone, text, newsletter.</li>
+      <li><strong>Pray</strong> with us &mdash; prayer chain, prayer call.</li>
+      <li><strong>Serve</strong> with us &mdash; at a Kamp, at an event, with student leaders.</li>
+      <li><strong>Give</strong> to us &mdash; financially.</li>
+      <li><strong>Share</strong> us &mdash; referrals, posts, tell the story.</li>
     </ol>
 
-    <h3 class="h-sub" style="margin-bottom:24px">Five Stages</h3>
+    <h3 class="h-sub mb-md">Five Stages</h3>
     <ol class="ol-vision">
-      <li><b>Identify</b> &mdash; outbound communication through email, text, call.</li>
-      <li><b>Qualify</b> &mdash; by their level of participation (the 5-star system).</li>
-      <li><b>Cultivate</b> &mdash; ongoing communication and invitation via email, text, call, socials.</li>
-      <li><b>Solicit</b> &mdash; asking boldly and clearly for money and resources.</li>
-      <li><b>Steward</b> &mdash; innovative and creative gratitude through gifts, trips, and thank-you's.</li>
+      <li><strong>Identify</strong> &mdash; outbound communication through email, text, call.</li>
+      <li><strong>Qualify</strong> &mdash; by their level of participation (the 5-star system).</li>
+      <li><strong>Cultivate</strong> &mdash; ongoing communication and invitation via email, text, call, socials.</li>
+      <li><strong>Solicit</strong> &mdash; asking boldly and clearly for money and resources.</li>
+      <li><strong>Steward</strong> &mdash; innovative and creative gratitude through gifts, trips, and thank-you's.</li>
     </ol>
 
-    <div class="lede" style="margin-top:64px">
+    <div class="lede mt-xl">
       We have a world-class call center and support center of relationship managers who call partner participants monthly, pray with those God puts in our path, and continually make the invitation to others.
     </div>
   </div>
@@ -730,39 +417,39 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
     </div>
 
     <div class="budget">
-      <h3 class="h-sub" style="margin-bottom:8px">HQ Leadership</h3>
+      <h3 class="h-sub mb-sm">HQ Leadership</h3>
       <div class="row"><div class="label">Executive Director</div><div class="amt">$100,000</div></div>
       <div class="row"><div class="label">Development Director</div><div class="amt">$100,000</div></div>
       <div class="row"><div class="label">Director of Kamps / Retreats</div><div class="amt">$70,000</div></div>
       <div class="row"><div class="label">Director of Kamp Songs</div><div class="amt">$70,000</div></div>
       <div class="row"><div class="label">Director of Story Telling</div><div class="amt">$70,000</div></div>
 
-      <h3 class="h-sub" style="margin:56px 0 8px">State Directors &middot; $50K each</h3>
+      <h3 class="h-sub section-subhead">State Directors &middot; $50K each</h3>
       <div class="row"><div class="label">Texas &mdash; Tyler Hullinger</div><div class="amt">$50,000</div></div>
       <div class="row"><div class="label">Ohio &mdash; Nate Weidner</div><div class="amt">$50,000</div></div>
       <div class="row"><div class="label">Michigan &mdash; Kal Wedeven</div><div class="amt">$50,000</div></div>
       <div class="row"><div class="label">California &mdash; Open</div><div class="amt">$50,000</div></div>
 
-      <h3 class="h-sub" style="margin:56px 0 8px">Department &amp; Operational Budgets</h3>
+      <h3 class="h-sub section-subhead">Department &amp; Operational Budgets</h3>
       <div class="row"><div class="label">Development Budget</div><div class="amt">$100,000</div></div>
       <div class="row"><div class="label">Kamp Songs</div><div class="amt">$50,000</div></div>
       <div class="row"><div class="label">Admin</div><div class="amt">$100,000</div></div>
       <div class="row"><div class="label">Tech Stack</div><div class="amt">$20,000</div></div>
       <div class="row"><div class="label">Kamps / Retreats</div><div class="amt">$200,000</div></div>
 
-      <div class="row"><div class="label"><b>Total Annual Runway</b></div><div class="amt"><b>$1,080,000</b></div></div>
+      <div class="row"><div class="label"><strong>Total Annual Runway</strong></div><div class="amt"><strong>$1,080,000</strong></div></div>
     </div>
   </div>
 </section>
 
 <!-- SCENARIOS -->
-<section class="dark">
+<section id="scenarios" class="dark">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">18 &middot; What We Will Do</div>
       <h2>Why we need cash now.</h2>
     </div>
-    <p class="lede" style="margin-bottom:64px">
+    <p class="lede mb-xl">
       Every door on our board &mdash; 40+ universities, two retreat centers, a national development team &mdash; requires runway to walk through. Here is exactly how each tier of partnership is deployed.
     </p>
 
@@ -794,8 +481,8 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
         <div class="amt">$5M</div>
         <ul>
           <li>Everything in Tier 1 + Tier 2.</li>
-          <li>Begin acquisition of <b>Kamp Emmanuel</b> (Johnstown, PA).</li>
-          <li>Begin acquisition of <b>UCYC</b> (Prescott, AZ).</li>
+          <li>Begin acquisition of <strong>Kamp Emmanuel</strong> (Johnstown, PA).</li>
+          <li>Begin acquisition of <strong>UCYC</strong> (Prescott, AZ).</li>
           <li>Launch Kamp Love Kids curriculum.</li>
           <li>First international Kamps in 2 of the 5 countries.</li>
         </ul>
@@ -809,7 +496,7 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
   <div class="wrap-sm">
     <div class="eyebrow">The Call For Help</div>
     <h2>If God is calling you to walk with us, walk&nbsp;with&nbsp;us.</h2>
-    <p class="lede" style="margin:0 auto 48px;text-align:center">
+    <p class="lede">
       Kamp Love is a vehicle. The mission is not mine &mdash; it is His. If any part of this vision stirs something in you, I want to talk.
     </p>
     <div class="btns">
@@ -823,15 +510,22 @@ footer .links{display:flex;gap:1.75rem;opacity:.7}
 
 <footer>
   <div class="f-logo">
-    <img src="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66d78a3b513117a1b3dc9fa3_okay2.png" alt="">
+    <img src="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66d78a3b513117a1b3dc9fa3_okay2.png" alt="" width="28" height="28">
     <span>Kamp Love &middot; Changing the world one student leader at a time.</span>
   </div>
-  <div class="links">
+  <nav aria-label="Footer">
     <a href="index.html">State of the Union</a>
     <a href="https://www.kamplove.org/">kamplove.org</a>
     <a href="mailto:austin@kamplove.org">austin@kamplove.org</a>
-  </div>
+  </nav>
 </footer>
 
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var links = document.getElementById('nav-links');
+  var open = links.classList.toggle('open');
+  this.setAttribute('aria-expanded', open);
+});
+</script>
 </body>
 </html>
