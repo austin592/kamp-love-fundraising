@@ -3,537 +3,150 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kamp Love - Kamp Songs · Worship written in the wilderness</title>
+<title>Kamp Love &mdash; Kamp Songs &middot; Live in the Prayer Chapel</title>
 <meta name="description" content="Original worship music from Kamp Love. Live in the Prayer Chapel. Born on retreats, recorded live, released to the Church.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   KAMP LOVE DESIGN SYSTEM — shared with index + vision + financial-model
-   ============================================================ */
-:root{
-  /* Color — OKLCH chromatic near-neutrals */
-  --cream:    oklch(0.965 0.010 70);
-  --cream-2:  oklch(0.92  0.012 65);
-  --dark:     oklch(0.19  0.010 50);
-  --dark-2:   oklch(0.30  0.010 50);
-  --muted:    oklch(0.85  0.008 65);
-  --rule-on-dark:  color-mix(in oklch, var(--cream) 22%, transparent);
-  --rule-on-cream: color-mix(in oklch, var(--dark)  22%, transparent);
-
-  /* Fonts */
-  --serif:"PT Serif","PT Serif Fallback",Georgia,serif;
-  --sans: "Lato","Lato Fallback",-apple-system,Arial,sans-serif;
-
-  /* Type scale — Perfect Fourth (1.333) */
-  --f-xs:  0.75rem;
-  --f-sm:  0.875rem;
-  --f-base:1rem;
-  --f-md:  1.125rem;
-  --f-lg:  1.333rem;
-  --f-xl:  1.777rem;
-  --f-2xl: 2.369rem;
-  --f-3xl: 3.157rem;
-  --f-4xl: 4.209rem;
-  --f-5xl: 5.61rem;
-  --f-6xl: 7.478rem;
-
-  --tk-caps:    0.08em;
-  --tk-display:-0.015em;
-
-  --lh-tight:1.08;
-  --lh-snug: 1.2;
-  --lh-body: 1.6;
-
-  --measure:     65ch;
-  --measure-nar: 52ch;
-
-  --wrap:      1200px;
-  --wrap-wide: 1400px;
-  --wrap-sm:   56.25rem;
-  --col-gap:   clamp(1.5rem, 3vw, 3rem);
-  --pad-x:     clamp(1.75rem, 6vw, 6rem);
-  --section-y: clamp(5rem, 12vh, 10rem);
-
-  --dur-fast: 120ms;
-  --dur-base: 200ms;
-  --dur-slow: 320ms;
-  --ease-std: cubic-bezier(.2,0,0,1);
-}
-
-@font-face{font-family:"PT Serif Fallback";src:local("Georgia");ascent-override:93%;descent-override:25%;line-gap-override:0%;size-adjust:100%}
-@font-face{font-family:"Lato Fallback";src:local("Arial");ascent-override:101%;descent-override:22%;line-gap-override:0%;size-adjust:97%}
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:100%;scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:none}
-body{
-  font-family:var(--serif);
-  background:var(--cream);color:var(--dark);
-  font-size:var(--f-md);line-height:var(--lh-body);
-  font-kerning:auto;font-variant-ligatures:common-ligatures;font-optical-sizing:auto;
-  text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;
-}
-@media (min-width:60em) {body{font-size:1.125rem}}
-@media (min-width:120em){body{font-size:1.25rem}}
-
-p{text-wrap:pretty;hyphens:auto;overflow-wrap:break-word;max-width:var(--measure);font-size:var(--f-md);line-height:var(--lh-body)}
-p + p{margin-top:1rem}
-img{max-width:100%;display:block;height:auto}
-a{color:inherit;text-decoration:none}
-:target{scroll-margin-block:5ex}
-::selection{background:var(--dark);color:var(--cream)}
-
-h1,h2,h3,h4,h5,h6{font-family:var(--serif);font-weight:500;text-wrap:balance;overflow-wrap:break-word}
-h1{font-size:clamp(var(--f-4xl),9vw,var(--f-6xl));line-height:var(--lh-tight);letter-spacing:var(--tk-display)}
-h2{font-size:clamp(var(--f-3xl),6vw,var(--f-5xl));line-height:var(--lh-tight);letter-spacing:var(--tk-display)}
-h3{font-size:clamp(var(--f-2xl),3.5vw,var(--f-3xl));line-height:var(--lh-snug)}
-h4{font-size:clamp(var(--f-xl),2.2vw,var(--f-2xl));line-height:var(--lh-snug)}
-.h-sub{font-size:clamp(var(--f-xl),2.2vw,var(--f-2xl));line-height:var(--lh-snug);letter-spacing:0}
-em{font-style:italic}
-
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
-
-.skip-link{
-  position:absolute;left:-9999px;top:0;
-  background:var(--dark);color:var(--cream);
-  padding:0.875rem 1.375rem;z-index:100;
-  font-family:var(--sans);font-size:var(--f-xs);
-  letter-spacing:var(--tk-caps);text-transform:uppercase;
-  border-radius:0 0 8px 0;
-}
-.skip-link:focus,.skip-link:focus-visible{left:0;top:0}
-
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{
-    animation-duration:0.01ms !important;animation-iteration-count:1 !important;
-    transition-duration:0.01ms !important;scroll-behavior:auto !important;
-  }
-}
-
-/* NAV */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.375rem var(--pad-x);
-  background:color-mix(in oklch, var(--dark) 72%, transparent);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  color:var(--cream);
-}
-.nav .logo{display:flex;align-items:center;gap:0.875rem;font-family:var(--serif);font-size:var(--f-md)}
-.nav .logo img{height:34px;filter:invert(1) brightness(2)}
-.nav .links{display:flex;gap:2rem;font-family:var(--sans);font-size:var(--f-xs);letter-spacing:var(--tk-caps);text-transform:uppercase}
-.nav .links a{opacity:.75;transition:opacity var(--dur-fast) var(--ease-std)}
-@media (hover:hover){.nav .links a:hover{opacity:1}}
-.nav .links a:focus-visible{opacity:1}
-.nav .links a.active{opacity:1;border-bottom:1px solid var(--cream);padding-bottom:4px}
-@media (max-width:720px){.nav .links{display:none}}
-
-/* BUTTONS */
-.btn{
-  display:inline-block;padding:1rem 1.75rem;border-radius:1006px;
-  font-family:var(--serif);font-size:var(--f-base);font-weight:400;line-height:1;
-  border:1px solid transparent;cursor:pointer;
-  transition:background-color var(--dur-base) var(--ease-std),color var(--dur-base) var(--ease-std),border-color var(--dur-base) var(--ease-std);
-}
-.btn-light     {background:var(--cream);color:var(--dark); border-color:var(--cream)}
-.btn-dark      {background:var(--dark); color:var(--cream);border-color:var(--dark)}
-.btn-ghost     {background:transparent; color:var(--cream);border-color:var(--cream)}
-.btn-ghost-dark{background:transparent; color:var(--dark); border-color:var(--dark)}
-@media (hover:hover){
-  .btn-light:hover     {background:var(--dark); color:var(--cream)}
-  .btn-dark:hover      {background:var(--cream);color:var(--dark)}
-  .btn-ghost:hover     {background:var(--cream);color:var(--dark)}
-  .btn-ghost-dark:hover{background:var(--dark); color:var(--cream)}
-}
-
-section{padding:var(--section-y) var(--pad-x)}
-.dark {background:var(--dark); color:var(--cream)}
-.cream{background:var(--cream);color:var(--dark)}
-.wrap   {max-width:var(--wrap-wide);margin:0 auto}
-.wrap-sm{max-width:var(--wrap-sm);  margin:0 auto}
-
-.eyebrow{font-family:var(--sans);font-size:var(--f-xs);letter-spacing:var(--tk-caps);text-transform:uppercase;font-weight:400;opacity:.7;margin-bottom:1.5rem}
-.lede{font-size:var(--f-lg);line-height:1.5;max-width:var(--measure)}
-
-/* HERO */
-.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding-top:8.75rem;position:relative;overflow:hidden}
-.hero h1{font-size:clamp(var(--f-4xl),9vw,9rem);margin-bottom:1.5rem;max-width:14ch}
-.hero .hero-sub{font-size:var(--f-lg);max-width:var(--measure);opacity:.85;margin-top:1.5rem}
-.hero-meta{
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;
-  margin-top:5rem;padding-top:2.5rem;
-  border-top:1px solid var(--rule-on-dark);
-  font-family:var(--sans);font-size:var(--f-xs);letter-spacing:var(--tk-caps);text-transform:uppercase;opacity:.6;
-}
-
-/* Hero ambient — a slow, quiet glow that only renders if motion is allowed */
-.hero-glow{
-  position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(60% 50% at 80% 12%, color-mix(in oklch, var(--cream) 6%, transparent) 0%, transparent 60%),
-    radial-gradient(50% 40% at 14% 88%, color-mix(in oklch, var(--cream) 4%, transparent) 0%, transparent 60%);
-  opacity:.9;
-  animation:heroDrift 22s ease-in-out infinite alternate;
-}
-@keyframes heroDrift{
-  0%  {transform:translate3d(0,0,0)}
-  100%{transform:translate3d(-2%, 1.5%, 0)}
-}
-@media (prefers-reduced-motion: reduce){.hero-glow{animation:none}}
-.hero > *{position:relative;z-index:1}
-
-section h2{margin-bottom:2.5rem;max-width:22ch}
-section h2 + .lede{margin-bottom:3rem}
-.section-head{margin-bottom:4rem}
-
-/* TRIPTYCH — reused pattern */
-.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--col-gap)}
-.triptych .t{border-top:1px solid var(--rule-on-dark);padding-top:1.75rem}
-.cream .triptych .t{border-top-color:var(--rule-on-cream)}
-.triptych .t h4{margin-bottom:1.125rem;font-style:italic}
-.triptych .t p{font-size:var(--f-base);line-height:var(--lh-body);opacity:.88;max-width:none}
-@media (max-width:880px){.triptych{grid-template-columns:1fr;gap:2.5rem}}
-
-/* ORDERED LIST — reused pattern */
-.ol-vision{list-style:none;counter-reset:v;max-width:55rem}
-.ol-vision li{
-  counter-increment:v;
-  padding:1.75rem 0 1.75rem 5rem;
-  border-top:1px solid var(--rule-on-dark);
-  position:relative;
-  font-size:var(--f-md);line-height:var(--lh-body);
-  max-width:none;
-}
-.cream .ol-vision li{border-top-color:var(--rule-on-cream)}
-.ol-vision li:before{
-  content:counter(v,decimal-leading-zero);
-  position:absolute;left:0;top:1.75rem;
-  font-family:var(--sans);font-size:var(--f-xs);
-  letter-spacing:var(--tk-caps);opacity:.55;
-  font-variant-numeric:tabular-nums;
-}
-.ol-vision li:last-child{border-bottom:1px solid var(--rule-on-dark)}
-.cream .ol-vision li:last-child{border-bottom-color:var(--rule-on-cream)}
-
-/* ============================================================
-   KAMP SONGS — page-specific styles
-   ============================================================ */
-
-/* LISTEN SECTION — the featured Spotify embed */
-.listen{
-  padding-top:clamp(2.5rem,6vh,5rem);
-  padding-bottom:var(--section-y);
-}
-.listen .album-frame{
-  max-width:720px;margin:0 auto;
-  position:relative;
-}
-.listen .album-meta{
-  display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:baseline;
-  padding-bottom:1.75rem;margin-bottom:1.75rem;
-  border-bottom:1px solid var(--rule-on-dark);
-}
-.listen .album-meta .title{
-  font-family:var(--serif);font-size:var(--f-2xl);
-  line-height:var(--lh-snug);letter-spacing:var(--tk-display);
-  font-style:italic;
-}
-.listen .album-meta .tag{
-  font-family:var(--sans);font-size:var(--f-xs);
-  letter-spacing:var(--tk-caps);text-transform:uppercase;opacity:.6;
-  white-space:nowrap;
-}
-.listen .embed-wrap{
-  position:relative;border-radius:14px;overflow:hidden;
-  box-shadow:
-    0 0 0 1px color-mix(in oklch, var(--cream) 10%, transparent),
-    0 30px 60px -20px color-mix(in oklch, #000 70%, transparent);
-  background:color-mix(in oklch, var(--dark) 50%, #000);
-  transition:transform var(--dur-slow) var(--ease-std),
-             box-shadow  var(--dur-slow) var(--ease-std);
-}
-@media (hover:hover){
-  .listen .embed-wrap:hover{
-    transform:translateY(-2px);
-    box-shadow:
-      0 0 0 1px color-mix(in oklch, var(--cream) 16%, transparent),
-      0 40px 80px -20px color-mix(in oklch, #000 80%, transparent);
-  }
-}
-.listen iframe{
-  display:block;width:100%;height:720px;border:0;
-  border-radius:14px;
-}
-@media (max-width:640px){
-  .listen iframe{height:620px}
-}
-.listen .album-caption{
-  margin-top:1.75rem;
-  font-family:var(--sans);font-size:var(--f-xs);
-  letter-spacing:var(--tk-caps);text-transform:uppercase;
-  opacity:.55;text-align:center;
-}
-
-/* RHYTHM — the three verbs */
-.rhythm{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--col-gap)}
-.rhythm .r{
-  padding:2.75rem 0 0;
-  border-top:1px solid var(--rule-on-cream);
-}
-.dark .rhythm .r{border-top-color:var(--rule-on-dark)}
-.rhythm .r .num{
-  font-family:var(--sans);font-size:var(--f-xs);
-  letter-spacing:var(--tk-caps);text-transform:uppercase;
-  opacity:.55;margin-bottom:1rem;
-  font-variant-numeric:tabular-nums;
-}
-.rhythm .r h3{
-  font-family:var(--serif);font-style:italic;
-  font-size:clamp(var(--f-2xl),3.2vw,var(--f-3xl));
-  line-height:var(--lh-tight);letter-spacing:var(--tk-display);
-  margin-bottom:1.25rem;
-}
-.rhythm .r p{font-size:var(--f-base);line-height:var(--lh-body);opacity:.85;max-width:none}
-@media (max-width:880px){.rhythm{grid-template-columns:1fr;gap:2.5rem}}
-
-/* NUMBER — the vision figure */
-.figure{
-  display:grid;grid-template-columns:auto 1fr;gap:clamp(1.75rem,4vw,4rem);
-  align-items:baseline;
-  padding:2.75rem 0;
-  border-top:1px solid var(--rule-on-dark);
-  border-bottom:1px solid var(--rule-on-dark);
-}
-.cream .figure{border-top-color:var(--rule-on-cream);border-bottom-color:var(--rule-on-cream)}
-.figure .big{
-  font-family:var(--serif);
-  font-size:clamp(var(--f-4xl),12vw,var(--f-6xl));
-  line-height:0.92;letter-spacing:-0.025em;font-weight:500;
-  font-variant-numeric:tabular-nums;
-}
-.figure .body{max-width:var(--measure);font-size:var(--f-md);line-height:var(--lh-body);opacity:.9}
-.figure .body em{font-style:italic;opacity:1}
-@media (max-width:720px){.figure{grid-template-columns:1fr;gap:1.25rem}.figure .big{font-size:clamp(var(--f-3xl),14vw,var(--f-5xl))}}
-
-/* PLATFORMS — minimal link row */
-.platforms{
-  display:flex;flex-wrap:wrap;gap:0;
-  border-top:1px solid var(--rule-on-cream);
-  margin-top:3rem;
-}
-.dark .platforms{border-top-color:var(--rule-on-dark)}
-.platforms a{
-  flex:1 1 220px;
-  padding:1.5rem 0;
-  display:flex;justify-content:space-between;align-items:center;gap:1rem;
-  border-bottom:1px solid var(--rule-on-cream);
-  transition:padding var(--dur-base) var(--ease-std);
-}
-.dark .platforms a{border-bottom-color:var(--rule-on-dark)}
-.platforms a + a{border-left:1px solid var(--rule-on-cream)}
-.dark .platforms a + a{border-left-color:var(--rule-on-dark)}
-.platforms a .label{font-family:var(--serif);font-size:var(--f-md)}
-.platforms a .arrow{
-  font-family:var(--sans);font-size:var(--f-xs);
-  letter-spacing:var(--tk-caps);text-transform:uppercase;opacity:.55;
-  transition:opacity var(--dur-base) var(--ease-std),transform var(--dur-base) var(--ease-std);
-}
-@media (hover:hover){
-  .platforms a:hover{padding-left:1.25rem;padding-right:1.25rem}
-  .platforms a:hover .arrow{opacity:1;transform:translateX(4px)}
-}
-@media (max-width:780px){
-  .platforms a + a{border-left:0}
-}
-
-/* CTA */
-.cta{text-align:center;padding:var(--section-y) var(--pad-x)}
-.cta h2{max-width:22ch;margin:0 auto 2.5rem}
-.cta .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-
-footer{
-  padding:3.5rem var(--pad-x);background:var(--dark);color:var(--cream);
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;
-  font-family:var(--sans);font-size:var(--f-sm);
-}
-footer .f-logo{display:flex;align-items:center;gap:0.875rem;font-family:var(--serif);font-size:var(--f-md)}
-footer .f-logo img{height:28px;filter:invert(1) brightness(2)}
-footer .links{display:flex;gap:1.75rem;opacity:.7}
-</style>
+<link rel="icon" href="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66d78a3b513117a1b3dc9fa3_okay2.png">
+<link rel="stylesheet" href="style.css?v=1">
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="nav" aria-label="Primary">
-  <div class="logo">
-    <img src="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66d78a3b513117a1b3dc9fa3_okay2.png" alt="Kamp Love">
-    <span>Kamp Love</span>
-  </div>
-  <div class="links">
-    <a href="index.html">State of the Union</a>
-    <a href="vision.html">The Vision</a>
-    <a href="financial-model.html">Financial Model</a>
-    <a href="kamp-songs.html" class="active">Kamp Songs</a>
-    <a href="https://www.kamplove.org/give">Give</a>
+<nav class="globalnav" aria-label="Global">
+  <div class="globalnav-inner">
+    <a href="index.html" class="globalnav-brand">Kamp Love</a>
+    <button class="globalnav-toggle" aria-expanded="false" aria-controls="globalnav-menu" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="globalnav-links" id="globalnav-menu">
+      <a href="index.html">State of the Union</a>
+      <a href="vision.html">The Vision</a>
+      <a href="financial-model.html">Financial Model</a>
+      <a href="kamp-songs.html" class="is-current">Kamp Songs</a>
+      <a href="https://www.kamplove.org/give" class="globalnav-cta">Give</a>
+    </div>
   </div>
 </nav>
 
-<main id="main">
+<main id="main" class="stack">
 
-<!-- HERO -->
-<section class="hero dark">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div>
-    <div class="eyebrow">Kamp Songs &middot; Live in the Prayer Chapel</div>
-    <h1>Worship written in <em>the wilderness.</em></h1>
-    <p class="hero-sub">
-      Original worship music from Kamp Love: born on retreats, recorded live in the prayer chapel, released to the Church.
-    </p>
-  </div>
-  <div class="hero-meta">
-    <div>KAMP LOVE &middot; 2025</div>
-    <div>Press play.</div>
-  </div>
-</section>
+  <section class="tile dark hero">
+    <div class="tile-inner">
+      <p class="wordmark">Kamp Songs &middot; Live in the Prayer Chapel</p>
+      <h1 class="headline xl">Worship written in <em>the wilderness.</em></h1>
+      <p class="subhead">Original worship music from Kamp Love: born on retreats, recorded live in the prayer chapel, released to the Church.</p>
+    </div>
+  </section>
 
-<!-- LISTEN -->
-<section class="listen dark">
-  <div class="album-frame">
-    <div class="album-meta">
-      <div class="title">Live in the Prayer Chapel</div>
-      <div class="tag">Full album &middot; scroll to explore</div>
-    </div>
-    <div class="embed-wrap">
-      <iframe
-        src="https://open.spotify.com/embed/album/3xg4evHziGnn9uRVn0MK1H?utm_source=kamplove&theme=0"
-        title="Spotify embed: Live in the Prayer Chapel by KAMP LOVE"
-        loading="lazy"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>
-    <div class="album-caption">Tap play &middot; scroll the tracklist inside the player</div>
-  </div>
-</section>
-
-<!-- WHAT KAMP SONGS IS -->
-<section class="cream">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">01 &middot; What Kamp Songs Is</div>
-      <h2>The worship DNA of the ministry.</h2>
-    </div>
-    <p class="lede">
-      Kamp Songs writes, records, and releases original Kamp Love worship songs. We run retreats to train, develop, and write with worship team leads from across the country. Then we record what the Lord gives us and send it out to serve churches and camps.
-    </p>
-    <p class="lede" style="margin-top:1.5rem">
-      It is a <em>discipleship pipeline</em> for young worship leaders. Music is the byproduct of the formation work.
-    </p>
-  </div>
-</section>
-
-<!-- RHYTHM — three verbs -->
-<section class="dark">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">02 &middot; The Rhythm</div>
-      <h2>Write. Record. Release.</h2>
-    </div>
-    <div class="rhythm">
-      <div class="r">
-        <div class="num">01</div>
-        <h3>Write on retreat.</h3>
-        <p>Songs are written during Kamp Songs retreats: co-written by worship leaders from Kamp Love campuses, guided by staff, tested live in the room before they are tracked anywhere.</p>
-      </div>
-      <div class="r">
-        <div class="num">02</div>
-        <h3>Record live.</h3>
-        <p>We record in the prayer chapel, live: one room, one take, one congregation. The sound carries the imprint of the moment it was made in, not the polish of a studio.</p>
-      </div>
-      <div class="r">
-        <div class="num">03</div>
-        <h3>Release for the Church.</h3>
-        <p>Songs go out on every major platform for free use by local churches, student ministries, and anyone building worship sets. The aim is usefulness, not streams.</p>
+  <section class="tile dark compact">
+    <div class="tile-inner">
+      <div class="album-frame">
+        <div class="album-meta">
+          <div class="title">Live in the Prayer Chapel</div>
+          <div class="tag">Full album &middot; press play</div>
+        </div>
+        <div class="embed-wrap">
+          <iframe
+            src="https://open.spotify.com/embed/album/3xg4evHziGnn9uRVn0MK1H?utm_source=kamplove&amp;theme=0"
+            title="Spotify embed: Live in the Prayer Chapel by Kamp Love"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <p class="album-caption">Tap play &middot; scroll the tracklist inside the player</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- VISION -->
-<section class="cream">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">03 &middot; The Vision</div>
-      <h2>One thousand young worship leaders.</h2>
+  <section class="tile">
+    <div class="tile-inner">
+      <p class="eyebrow">01 &middot; What Kamp Songs Is</p>
+      <h2 class="headline">The worship DNA of the ministry.</h2>
+      <p class="body-text" style="margin-top:clamp(28px,3vw,40px);max-width:60ch">Kamp Songs writes, records, and releases original Kamp Love worship songs. We run retreats to train, develop, and write with worship team leads from across the country. Then we record what the Lord gives us and send it out to serve churches and camps.</p>
+      <p class="body-text">It is a <em>discipleship pipeline</em> for young worship leaders. Music is the byproduct of the formation work.</p>
     </div>
-    <div class="figure">
-      <div class="big">1,000</div>
-      <div class="body">
-        Young worship leaders equipped to <em>write and release original worship music for the Church.</em> Formed on retreats, sent into their local contexts, carrying the Kamp Love worship DNA into the next generation.
+  </section>
+
+  <section class="tile dark">
+    <div class="tile-inner">
+      <p class="eyebrow">02 &middot; The Rhythm</p>
+      <h2 class="headline">Write. Record. Release.</h2>
+      <div class="specs">
+        <div>
+          <p class="spec-num">01</p>
+          <h3>Write on retreat.</h3>
+          <p>Songs co-written by worship leaders from Kamp Love campuses, guided by staff, tested live in the room before they are tracked anywhere.</p>
+        </div>
+        <div>
+          <p class="spec-num">02</p>
+          <h3>Record live.</h3>
+          <p>One room, one take, one congregation. The sound carries the imprint of the moment it was made in, not the polish of a studio.</p>
+        </div>
+        <div>
+          <p class="spec-num">03</p>
+          <h3>Release for the Church.</h3>
+          <p>Songs go out on every major platform, free for local churches, student ministries, and anyone building a worship set. The aim is usefulness, not streams.</p>
+        </div>
       </div>
     </div>
-    <p class="lede" style="margin-top:3rem">
-      That is the target. <em>Live in the Prayer Chapel</em> is the first long-form record. Everything that follows (retreats, tracks, relationships, stewardship) is in service of the one-thousand number.
-    </p>
-  </div>
-</section>
+  </section>
 
-<!-- LISTEN ELSEWHERE + CTA -->
-<section class="dark">
-  <div class="wrap-sm">
-    <div class="section-head">
-      <div class="eyebrow">04 &middot; Listen &amp; Follow</div>
-      <h2>Take the album with you.</h2>
+  <section class="tile">
+    <div class="tile-inner">
+      <p class="eyebrow">03 &middot; The Vision</p>
+      <h2 class="headline">One thousand young worship leaders.</h2>
+      <p class="subhead">Equipped to <em>write and release original worship music for the Church.</em> Formed on retreats. Sent into their local contexts. Carrying the Kamp Love worship DNA into the next generation.</p>
+      <p class="body-text" style="margin-top:clamp(28px,3vw,40px);max-width:60ch">That is the target. <em>Live in the Prayer Chapel</em> is the first long-form record. Everything that follows &mdash; retreats, tracks, relationships, stewardship &mdash; is in service of the one-thousand number.</p>
     </div>
-    <p class="lede" style="margin-bottom:1rem">
-      Follow KAMP LOVE on Spotify to get new songs as they drop. Music is free to use in your church, campus ministry, or worship set.
-    </p>
-    <div class="platforms">
-      <a href="https://open.spotify.com/artist/64CMT9YWYYX1LPAhkr2NB3" target="_blank" rel="noopener">
-        <span class="label">Follow on Spotify</span>
-        <span class="arrow">Open</span>
-      </a>
-      <a href="https://open.spotify.com/album/3xg4evHziGnn9uRVn0MK1H" target="_blank" rel="noopener">
-        <span class="label">Open full album</span>
-        <span class="arrow">Open</span>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA — support -->
-<section class="cta cream">
-  <div class="wrap-sm">
-    <div class="eyebrow">Support</div>
-    <h2>Help us make the next one.</h2>
-    <p class="lede" style="margin:0 auto 2.5rem;text-align:left">
-      Every dollar given to Kamp Love supports Kamp Songs retreats, recording, and the development of the next thousand worship leaders.
-    </p>
-    <div class="btns">
-      <a class="btn btn-dark" href="https://www.kamplove.org/give">Give to Kamp Love</a>
-      <a class="btn btn-ghost-dark" href="vision.html">Read the full vision</a>
+  <section class="tile dark">
+    <div class="tile-inner">
+      <p class="eyebrow">04 &middot; Listen &amp; Follow</p>
+      <h2 class="headline">Take the album with you.</h2>
+      <p class="subhead">Follow Kamp Love on Spotify to get new songs as they drop. Music is free to use in your church, campus ministry, or worship set.</p>
+      <div class="platforms">
+        <a href="https://open.spotify.com/artist/64CMT9YWYYX1LPAhkr2NB3" target="_blank" rel="noopener">
+          <span>Follow on Spotify</span>
+          <span class="arrow">Open &rarr;</span>
+        </a>
+        <a href="https://open.spotify.com/album/3xg4evHziGnn9uRVn0MK1H" target="_blank" rel="noopener">
+          <span>Open full album</span>
+          <span class="arrow">Open &rarr;</span>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="tile" style="text-align:center">
+    <div class="tile-inner">
+      <p class="eyebrow" style="text-align:center">Support</p>
+      <h2 class="headline" style="margin:0 auto;max-width:22ch">Help us make the next one.</h2>
+      <p class="subhead" style="margin-left:auto;margin-right:auto">Every dollar given to Kamp Love supports Kamp Songs retreats, recording, and the development of the next thousand worship leaders.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="pill" href="https://www.kamplove.org/give">Give to Kamp Love</a>
+        <a class="pill ghost" href="vision.html">Read the full vision</a>
+      </div>
+    </div>
+  </section>
 
 </main>
 
-<footer>
-  <div class="f-logo">
-    <img src="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66d78a3b513117a1b3dc9fa3_okay2.png" alt="Kamp Love">
-    <span>Kamp Love</span>
-  </div>
-  <div class="links">
-    <a href="index.html">State of the Union</a>
-    <a href="vision.html">The Vision</a>
-    <a href="financial-model.html">Financial Model</a>
-    <a href="https://www.kamplove.org/">kamplove.org</a>
-    <a href="mailto:austin@kamplove.org">austin@kamplove.org</a>
+<footer class="foot">
+  <div class="foot-inner">
+    <p class="foot-line">Kamp Love &middot; Changing the world one student leader at a time.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">State of the Union</a>
+      <a href="vision.html">The Vision</a>
+      <a href="financial-model.html">Financial Model</a>
+      <a href="kamp-songs.html">Kamp Songs</a>
+      <a href="https://www.kamplove.org/" target="_blank" rel="noopener">kamplove.org</a>
+      <a href="mailto:austin@kamplove.org">austin@kamplove.org</a>
+    </nav>
+    <p class="foot-credit">Site refresh &amp; build by Austin Rockwell.</p>
   </div>
 </footer>
 
+<script src="js/site.js?v=1" defer></script>
 </body>
 </html>
