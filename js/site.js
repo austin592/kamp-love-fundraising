@@ -1,4 +1,22 @@
 (() => {
+  document.querySelectorAll('.video-play').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.yt;
+      if (!id) return;
+      const title = btn.getAttribute('aria-label') || 'YouTube video';
+      const tile = btn.closest('.video-tile');
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+      iframe.title = title;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      tile.appendChild(iframe);
+      btn.remove();
+      const img = tile.querySelector('img');
+      if (img) img.remove();
+    });
+  });
+
   const toggle = document.querySelector('.globalnav-toggle');
   const menu = document.querySelector('.globalnav-links');
   if (toggle && menu) {

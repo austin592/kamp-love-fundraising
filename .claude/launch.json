@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "kl100in5",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "5180", "--directory", "/Users/austinrockwell/claude folder/kamplove100in5"],
+      "port": 5180
+    }
+  ]
+}
