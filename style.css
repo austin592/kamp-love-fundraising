@@ -1004,7 +1004,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 
 /* DONORBOX EMBED — inline give experience */
 .donate-frame {
-  max-width: 720px;
+  max-width: 500px; /* matches Donorbox form's natural content width so the card hugs the embed */
   margin: clamp(40px, 5vw, 64px) auto 0;
   background: #fff;
   border-radius: 14px;
