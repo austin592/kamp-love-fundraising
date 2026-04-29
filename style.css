@@ -105,7 +105,6 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 .globalnav-brand .kampfire {
   width: 22px; height: 22px;
   display: inline-block;
-  filter: invert(1) brightness(2);
   transform-origin: 50% 80%;
   animation: kampfire-flicker 2.4s ease-in-out infinite;
 }
@@ -215,9 +214,8 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   white-space: nowrap;
 }
 .ticker-flame {
-  width: clamp(18px, 1.6vw, 24px);
-  height: clamp(18px, 1.6vw, 24px);
-  filter: invert(1) brightness(2);
+  width: clamp(20px, 1.8vw, 28px);
+  height: clamp(20px, 1.8vw, 28px);
   flex-shrink: 0;
   transform-origin: 50% 80%;
   animation: kampfire-flicker 2.4s ease-in-out infinite;
