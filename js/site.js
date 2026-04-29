@@ -24,9 +24,17 @@
         const base = a.dataset.donateBase;
         a.href = slug ? `${base}?default_campaign=${slug}` : base;
       });
+      const iframe = document.getElementById('donateIframe');
+      if (iframe) {
+        const base = iframe.dataset.donateBase || iframe.src.split('?')[0];
+        const u = new URL(base);
+        u.searchParams.set('default_interval', 'm');
+        if (slug) u.searchParams.set('default_campaign', slug);
+        const next = u.toString();
+        if (iframe.src !== next) iframe.src = next;
+      }
     };
     campusSelect.addEventListener('change', update);
-    update();
   }
 
   document.querySelectorAll('.video-play').forEach((btn) => {

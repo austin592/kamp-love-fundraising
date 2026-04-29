@@ -1002,6 +1002,41 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 }
 .photo-tile-content { position: relative; z-index: 1; max-width: 720px; }
 
+/* DONORBOX EMBED — inline give experience */
+.donate-frame {
+  max-width: 720px;
+  margin: clamp(40px, 5vw, 64px) auto 0;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px var(--rule),
+    0 30px 60px -20px rgba(0,0,0,0.12);
+}
+.donate-frame iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  min-height: 900px;
+}
+.donate-frame .donate-loading {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 480px;
+  font-size: 14px; color: var(--dim);
+  letter-spacing: var(--tk-eyebrow);
+  text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  .donate-frame iframe { min-height: 1100px; }
+}
+.donate-fineprint {
+  font-size: 13px;
+  color: var(--dim);
+  text-align: center;
+  margin: clamp(16px, 2vw, 24px) auto 0;
+  max-width: 56ch;
+}
+
 /* SPOTIFY EMBED */
 .album-frame {
   max-width: 720px;

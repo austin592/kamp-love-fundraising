@@ -6,7 +6,7 @@
 <title>Kamp Love &mdash; State of the Union &amp; Growth Plan 2026</title>
 <meta name="description" content="A national college camping ministry. 19 campuses. 18,000 students. The vision for 100 Kamps in 5 years.">
 <link rel="icon" href="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66d77a3447ccd7ce27a50755_okay1.png">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
       <a href="vision.html">The Vision</a>
       <a href="financial-model.html">Financial Model</a>
       <a href="kamp-songs.html">Kamp Songs</a>
-      <a href="https://www.kamplove.org/give" class="globalnav-cta">Give</a>
+      <a href="#give" class="globalnav-cta">Give</a>
     </div>
   </div>
 </nav>
@@ -242,9 +242,20 @@
         <p class="give-options-note">Your gift will be designated to the campus you choose. Leave blank to support the general Kamp Love fund.</p>
       </div>
 
-      <div class="cta-row" style="justify-content:center;margin-top:clamp(28px,3vw,40px)">
-        <a class="pill" target="_blank" rel="noopener" data-donate-base="https://donorbox.org/kamp-love" href="https://donorbox.org/kamp-love">Give at DonorBox</a>
+      <div class="donate-frame">
+        <iframe
+          id="donateIframe"
+          src="https://donorbox.org/embed/kamp-love-2024?default_interval=m"
+          data-donate-base="https://donorbox.org/embed/kamp-love-2024"
+          title="Donate to Kamp Love"
+          name="donorbox"
+          seamless="seamless"
+          allow="payment"
+          allowpaymentrequest=""
+          scrolling="no"
+          loading="lazy"></iframe>
       </div>
+      <p class="donate-fineprint">Kamp Love is a 501(c)(3) &middot; EIN 86-1879059 &middot; All gifts are tax-deductible.</p>
     </div>
   </section>
 
@@ -254,7 +265,7 @@
       <h2 class="headline" style="margin:0 auto;max-width:24ch">Find Christ-like community at your school.</h2>
       <div class="cta-row" style="justify-content:center">
         <a href="https://www.kamplove.org/" class="pill">Find your Kamp</a>
-        <a href="https://www.kamplove.org/give" class="pill ghost">Partner with us</a>
+        <a href="#give" class="pill ghost">Partner with us</a>
       </div>
     </div>
   </section>
@@ -262,7 +273,7 @@
 </main>
 
 <div class="floating-cta" id="floatingCta">
-  <a class="pill" target="_blank" rel="noopener" data-donate-base="https://donorbox.org/kamp-love" href="https://donorbox.org/kamp-love">Partner with us</a>
+  <a class="pill" href="#give">Partner with us</a>
 </div>
 
 <footer class="foot">
@@ -343,6 +354,6 @@
   slider.addEventListener('input', updateCalc);
   updateCalc();
 </script>
-<script src="js/site.js?v=5" defer></script>
+<script src="js/site.js?v=6" defer></script>
 </body>
 </html>
