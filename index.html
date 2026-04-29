@@ -6,7 +6,7 @@
 <title>Kamp Love &mdash; State of the Union &amp; Growth Plan 2026</title>
 <meta name="description" content="A national college camping ministry. 19 campuses. 18,000 students. The vision for 100 Kamps in 5 years.">
 <link rel="icon" href="https://cdn.prod.website-files.com/66d770a34f7bb47b876dfcc5/66d77a3447ccd7ce27a50755_okay1.png">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -81,7 +81,7 @@
         <div>
           <p class="spec-num">01</p>
           <h3>Camping.</h3>
-          <p>A weekend in the pines, around a fire, under open sky. Space to hear Him.</p>
+          <p>Students step off campus and into God's creation&mdash;a weekend in the pines, gathered around a fire beneath an open sky, with space to hear Him.</p>
         </div>
         <div>
           <p class="spec-num">02</p>
@@ -213,9 +213,37 @@
         <input type="range" id="calcSlider" class="calc-slider" min="0" max="17" step="1" value="7" aria-label="Monthly gift amount">
         <div class="calc-range-labels"><span>$25</span><span>$25,000</span></div>
         <output for="calcSlider" class="calc-impact" id="calcImpact">Develops <strong>one student leader</strong> for a year.</output>
-        <div class="cta-row" style="justify-content:center;margin-top:clamp(28px,3vw,40px)">
-          <a href="https://donorbox.org/kamp-love" class="pill" target="_blank" rel="noopener">Give at DonorBox</a>
-        </div>
+      </div>
+
+      <div class="give-options">
+        <label for="campusSelect" class="give-options-label">Send your gift to</label>
+        <select id="campusSelect" name="campus" aria-label="Choose which campus your gift supports">
+          <option value="">Kamp Love &middot; general fund</option>
+          <option value="grand-canyon">Grand Canyon University</option>
+          <option value="california-baptist">California Baptist University</option>
+          <option value="biola">Biola University</option>
+          <option value="point-loma">Point Loma Nazarene</option>
+          <option value="westmont">Westmont College</option>
+          <option value="texas-am">Texas A&amp;M</option>
+          <option value="dallas-baptist">Dallas Baptist University</option>
+          <option value="baylor">Baylor University</option>
+          <option value="samford">Samford University</option>
+          <option value="kentucky">University of Kentucky</option>
+          <option value="clemson">Clemson University</option>
+          <option value="purdue">Purdue University</option>
+          <option value="cedarville">Cedarville University</option>
+          <option value="xavier">Xavier University</option>
+          <option value="grand-valley">Grand Valley State</option>
+          <option value="northern-michigan">Northern Michigan</option>
+          <option value="asbury">Asbury University</option>
+          <option value="liberty">Liberty University</option>
+          <option value="auburn">Auburn University</option>
+        </select>
+        <p class="give-options-note">Your gift will be designated to the campus you choose. Leave blank to support the general Kamp Love fund.</p>
+      </div>
+
+      <div class="cta-row" style="justify-content:center;margin-top:clamp(28px,3vw,40px)">
+        <a class="pill" target="_blank" rel="noopener" data-donate-base="https://donorbox.org/kamp-love" href="https://donorbox.org/kamp-love">Give at DonorBox</a>
       </div>
     </div>
   </section>
@@ -232,6 +260,10 @@
   </section>
 
 </main>
+
+<div class="floating-cta" id="floatingCta">
+  <a class="pill" target="_blank" rel="noopener" data-donate-base="https://donorbox.org/kamp-love" href="https://donorbox.org/kamp-love">Partner with us</a>
+</div>
 
 <footer class="foot">
   <div class="foot-inner">
@@ -311,6 +343,6 @@
   slider.addEventListener('input', updateCalc);
   updateCalc();
 </script>
-<script src="js/site.js?v=3" defer></script>
+<script src="js/site.js?v=4" defer></script>
 </body>
 </html>

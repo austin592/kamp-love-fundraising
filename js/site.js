@@ -1,4 +1,34 @@
 (() => {
+  const fc = document.getElementById('floatingCta');
+  const hero = document.querySelector('.tile.hero, .tile.hero-xl');
+  const give = document.getElementById('give');
+  if (fc && hero) {
+    let heroVisible = true, giveVisible = false;
+    const update = () => fc.classList.toggle('is-visible', !heroVisible && !giveVisible);
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.target === hero) heroVisible = e.isIntersecting;
+        if (give && e.target === give) giveVisible = e.isIntersecting;
+      }
+      update();
+    }, { threshold: 0, rootMargin: '-44px 0px 0px 0px' });
+    io.observe(hero);
+    if (give) io.observe(give);
+  }
+
+  const campusSelect = document.getElementById('campusSelect');
+  if (campusSelect) {
+    const update = () => {
+      const slug = campusSelect.value;
+      document.querySelectorAll('a[data-donate-base]').forEach((a) => {
+        const base = a.dataset.donateBase;
+        a.href = slug ? `${base}?default_campaign=${slug}` : base;
+      });
+    };
+    campusSelect.addEventListener('change', update);
+    update();
+  }
+
   document.querySelectorAll('.video-play').forEach((btn) => {
     btn.addEventListener('click', () => {
       const id = btn.dataset.yt;
