@@ -1017,17 +1017,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   display: block;
   width: 100%;
   border: 0;
-  min-height: 900px;
-}
-.donate-frame .donate-loading {
-  display: flex; align-items: center; justify-content: center;
-  min-height: 480px;
-  font-size: 14px; color: var(--dim);
-  letter-spacing: var(--tk-eyebrow);
-  text-transform: uppercase;
-}
-@media (max-width: 600px) {
-  .donate-frame iframe { min-height: 1100px; }
+  min-height: 580px; /* placeholder height; Donorbox widget script auto-resizes to actual content */
 }
 .donate-fineprint {
   font-size: 13px;
